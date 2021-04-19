@@ -75,6 +75,9 @@ function App() {
       <AppContext.Provider value={{ isAuthenticated, userHasAuthenticated }}>
         <Routes />
       </AppContext.Provider>
+      <hr/>
+      <p className="text-center text-muted">Skratch - the simplest thing on earth</p>
+      <p className="text-center text-muted text-xs">powered by digitalbox</p>
     </div>
   ));
 }
