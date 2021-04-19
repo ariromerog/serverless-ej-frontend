@@ -6,6 +6,7 @@ import { useHistory } from "react-router-dom";
 import { onError } from "../libs/errorlib";
 import { s3Upload } from "../libs/awslib";
 import config from "../config";
+import { LinkContainer } from "react-router-bootstrap";
 import "./NewNote.css";
 
 export default function NewNote() {
@@ -72,6 +73,8 @@ export default function NewNote() {
 
   return (
     <div className="NewNote">
+      <h2 className="pb-3 mt-4 mb-3 border-bottom">Write a new Note</h2>
+
       <Form onSubmit={handleSubmit}>
         <Form.Group controlId="content">
           <Form.Control
@@ -85,10 +88,9 @@ export default function NewNote() {
           <Form.Control onChange={handleFileChange} type="file" />
         </Form.Group>
         <Button
-          block
           type="submit"
           size="lg"
-          variant="primary"
+          variant="success"
           disabled={!validateForm() || isLoading}
         >
         { isLoading ? (<> Loading ... </>) : (<> Create Note! </>)  }
